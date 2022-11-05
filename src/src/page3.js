@@ -20,11 +20,11 @@ function Three(){
                 <Col sm={8} className="layoutImg">
                     <Row style={{marginRight:10}}>
                         <img src={require('./img/ph1.png')} className='pImg'></img>
-                        <img src={require('./img/ph1.png')} className='pImg1'></img>
+                        <img src={require('./img/ph2.png')} className='pImg1'></img>
                     </Row>
                     <Row>
-                        <img src={require('./img/ph1.png')} className='pImg2'></img>
-                        <img src={require('./img/ph1.png')} className='pImg3'></img>
+                        <img src={require('./img/ph3.png')} className='pImg2'></img>
+                        <img src={require('./img/ph4.png')} className='pImg3'></img>
                     </Row>
                 </Col>
             </Row>

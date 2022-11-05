@@ -1,15 +1,8 @@
 .dotNavigation{
- border: 1px solid;
  height: 100%;
  display: flex;
  justify-content: center;
  flex-direction: column;
  right: 0;
  position: fixed;
-}
-body::-webkit-scrollbar{
-    display: none;
-}
-body{
-    overflow-x: hidden;
 }

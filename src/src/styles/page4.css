@@ -1,38 +1,52 @@
 .body4{
     height: 100vh;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 h1{
     text-align: center;
-    padding: 50px;
-    margin: -80px 0 ;
+    padding: 20px;
 }
-.center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: -20px;
-    /* border: 1px solid; */
-}
-.layer2{
-    display: flex;
-    justify-content: space-evenly;
-    /* border: 1px solid; */
-    margin: -20px;
 
+.layer2{
+    width: 25%;
+    border: 1px solid;
+    display: flex;
 
 }
 .layer1{
+    width: 25%;
+    border: 1px solid;
     display: flex;
-    justify-content: space-between;
-    margin: -20px 150px;
-    /* border: 1px solid; */
 
 }
-.layer4{
+.layer{
+    width: 25%;
+    border: 1px solid;
     display: flex;
-    justify-content: space-between;
-    margin: -20px 200px;
-    /* border: 1px solid; */
+ 
+ }
+.layer4{
+    width: 25%;
+    border: 1px solid;
+    display: flex;
+
+}
+.containerTeam{
+    border: 1px solid;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+.l1{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    object-position: -580px 0px;
+}
+.l1:hover{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    object-position: 0px 0px;
 
 }

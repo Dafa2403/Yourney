@@ -7,11 +7,11 @@ function Two(){
         <div className='pg2' id='produk'>
             <div className='bg2'> 
                 <div className='con-content'>
-                    <div style={{display:'flex', justifyContent:'center',alignItems:'center',width:'40%',height:'100%' ,border:'1px solid'}}>
+                    <div style={{display:'flex', justifyContent:'center',alignItems:'center',width:'40%',height:'100%'}}>
                         <div className='bestCont'>
                             <Card style={{width:'95%',height:'95%', borderRadius: 25, backgroundColor:'#fff'}}>
                                 <Card.Body style={{display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column'}}>
-                                    <Card.Title style={{fontSize:90, textAlign:'center', color:"#00A58F"}} >TOP 50</Card.Title>
+                                    <Card.Title style={{fontSize:90, textAlign:'center', color:"#00A58F"}} >TOP 15</Card.Title>
                                     <Card.Text style={{fontSize:45, textAlign:'center', color:"#00A58F"}}>PRODUCT CAPSTONE BANGKIT 2022</Card.Text>
                                 </Card.Body>
 
