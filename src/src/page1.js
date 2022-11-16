@@ -5,7 +5,7 @@ import { useEffect, useState, useRef } from 'react';
 
 function One() {
   const[nav,setNav] = useState('')
-
+  
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
     if (scrolled > 500){
@@ -40,15 +40,15 @@ function One() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" style={{justifyContent:'flex-end'}}>
           <Nav>
-            <Nav.Link href="#">About Us</Nav.Link>
+            <Nav.Link href="#team">About Us</Nav.Link>
             <Nav.Link href="#portofolio">Portofolio</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
         
-    {/* Body 1 */}
-      <div className='body'>
+    {/* Body 1 */} 
+      <div className='body' id='home'>
         
         <div className='conTitle'>
           <span className='tag' >MAKE IT JOURNEY IS YOURS</span>

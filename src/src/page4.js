@@ -3,7 +3,7 @@ import './styles/page4.css';
 function Four(){
     return(
         <>
-            <body className='body4'>
+              <body className='body4' id='team'>
                 <h1>Meet Our Team</h1>
                 <div className='layer1'>
                     <img src={require('./img/image 1.png')}></img>

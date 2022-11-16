@@ -5,22 +5,32 @@ import {FaCircle} from "react-icons/fa";
 import './App.css';
 import Four from "./src/page4";
 import Five from "./src/page5";
+import Footer from "./src/footer";
+import { useState } from "react";
 
 
 function App(){
+    const[dot,setDot] = useState('white')
+    // let team = document.getElementById("team");
+    // let home = document.getElementById("home");
+    // console.log('test',team.id)
+
+
     return(
-        <body id="home">
+        <body >
+             {/* <div className="dotNavigation">
+            <FaCircle color="orange"/>
+            <FaCircle color={dot}/>
+            <FaCircle color={dot}/>
+            <FaCircle color={dot}/>
+        </div> */}
         <One/>
         <Two/>
         <Three/>
         <Four/>
-        <Five/>
-        <div className="dotNavigation">
-            <FaCircle color="orange"/>
-            <FaCircle color="white"/>
-            <FaCircle color="white"/>
-            <FaCircle color="white"/>
-        </div>
+        {/* <Five/> */}
+       <Footer/>
+       
 
         </body>
         
