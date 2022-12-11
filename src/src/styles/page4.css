@@ -20,7 +20,6 @@
     padding: 0;
     width: 33.33%;
     height: 100vh;
-    
 }
 .conImg2{
     margin: 0;
@@ -75,4 +74,12 @@
     height: 100vh;
     object-fit: cover;
     object-position: -200px 0;
+}
+.titleT{
+    position: absolute;
+    color: white;
+    z-index: 1;
+    padding-top: 650px;
+    padding-left: 30px;
+    text-shadow: 3px 3px #000;
 }

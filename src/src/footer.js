@@ -9,7 +9,7 @@ function Footer(){
             <div className='footer'>
                 <IoLogoWhatsapp color='white' size={40}/>
                 <a href='https://www.instagram.com/yourney.project/'><IoLogoInstagram color='white' size={40} /></a>
-                <IoLogoLinkedin color='white' size={40}/>
+                <a href='https://www.instagram.com/yourney.project/'><IoLogoLinkedin color='white' size={40}/></a>
                 <IoIosPin color='white' size={40}/>
             </div>
             <div className='cr'>
