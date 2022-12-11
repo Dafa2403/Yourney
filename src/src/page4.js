@@ -2,27 +2,36 @@ import './styles/page4.css';
 
 function Four(){
     return(
-        <>
-              <body className='body4' id='team'>
-                <h1>Meet Our Team</h1>
-                <div className='layer1'>
-                    <img src={require('./img/image 1.png')}></img>
-                    <img src={require('./img/image 5.png')}></img>
+        <body className='four'>
+            <div className='conTeam'>
+                {/* ML */}
+                <div className='conImg'>
+                    <div className='conImg1'>
+                        <img className='img1' src={require('./img/Personil/alif.jpeg')}></img>
+                    </div>
+                    <div className='conImg1'>
+                        <img className='img2' src={require('./img/Personil/aul.jpg')}></img>
+                    </div>
+                    <div className='conImg1'>
+                        <img className='img3' src={require('./img/Personil/rohman.jpg')}></img>
+                    </div>
                 </div>
-                <div className='layer2'>
-                    <img src={require('./img/daf.png')}></img>
-                    <img src={require('./img/co.png')}></img>
+                <div className='conImg'>
+                    <img className='img4' src={require('./img/Personil/alif.jpeg')}></img>
                 </div>
-                <div className='center'>
-                    <img src={require('./img/ren.png')}></img>
+                <div className='conImg'>
+                    <img className='img5' src={require('./img/Personil/Dafa.JPG')}></img>
                 </div>
-                <div className='layer4'>
-                    <img src={require('./img/image 2.png')}></img>
-                    <img src={require('./img/image 3.png')}></img>
+                <div className='conImg'>
+                    <div className='conImg2'>
+                        <img className='img6' src={require('./img/Personil/ren2.jpg')}></img>
+                    </div>
+                    <div className='conImg2'>
+                        <img className='img7' src={require('./img/Personil/coco.jpg')}></img>
+                    </div>
                 </div>
-            </body>
-        
-        </>
+            </div>
+        </body>
     )
 }
 

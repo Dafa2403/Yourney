@@ -19,6 +19,7 @@
     display: flex;
     justify-content: center;
     max-height: 100vh;
+    z-index: 1;
 }
 .pImg{
     width: 100%; 
@@ -52,6 +53,9 @@
 .porto{
     display: flex;
 }
+.marginR{
+    margin-right: 10px;
+}
 
 @media only screen and (min-width: 360px){
     .porto{
@@ -62,34 +66,52 @@
         height: 50%;
         padding: 10px;
     }
+    .conPs{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid; */
+    }
     .ps{
-        width: 50%;
+        width: 80%;
     }
     .layoutImg{
         flex-direction: row;
     }
     .pImg{
-        width: 100%; 
-        object-fit: contain;
-        object-position: 0 0;
+        width: 50%; 
+        clip-path: none;
+        height: auto;
+        /* object-fit: contain;
+        object-position: 0 0; */
         margin-bottom: 10px;
     }
+    .marginR{
+        margin-right: 0;
+    }
     .pImg1{
-        width: 100%; 
-        object-fit: contain;
-        object-position: 0 0;
+        width: 50%; 
+        clip-path: none;
+        height: auto;
+        /* object-fit: contain;
+        object-position: 0 0; */
         margin-bottom: 10px;
     }
     .pImg2{
-        width: 100%; 
-        object-fit: contain;
-        object-position: 0 0;
+        width: 50%; 
+        clip-path: none;
+        height: auto;
+        /* object-fit: contain;
+        object-position: 0 0; */
         margin-bottom: 10px;
     }
     .pImg3{
-        width: 100%; 
-        object-fit: contain;
-        object-position: 0 0;
+        width: 50%; 
+        clip-path: none;
+        height: auto;
+        /* object-fit: contain;
+        object-position: 0 0; */
         margin-bottom: 10px;
     }
 }
@@ -106,7 +128,8 @@
         width: 45%;
         height: 100vh;
         padding: 90px;
-
+        z-index: 1;
+        
     }
     .pImg{
         width: 100%; 
@@ -136,7 +159,46 @@
         object-position: 100% 0;
         clip-path: inset(0 0 10px 0);
     }
-    .ps{
+    .conPs{
         width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 0px solid;
+    }
+    .ps{
+        width: 50%;
+    }
+    .vector-top{
+        position: absolute;
+        transform: rotate(-2deg) scale(1.1);
+        width: 800px;
+        z-index: 1;
+    }
+    .vector-bottom{
+        position: absolute;
+        /* bottom: 0; */
+        right: 0;
+        padding-top: 410px;
+    }
+    .conDesk{
+         
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 10px;
+    }
+    .bgBlur{
+        backdrop-filter: blur(20px);
+        border-radius: 25px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background:rgb(210, 210, 210);
+        background:rgba(230, 230, 230, 0.3);
     }
   }
