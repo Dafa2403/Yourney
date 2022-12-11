@@ -13,8 +13,8 @@ function Footer(){
                 <IoIosPin color='white' size={40}/>
             </div>
             <div className='cr'>
-                <span>2021-2022 Yourney</span>
-                <span>2021-2022 Clottania</span>
+                <span>© 2021-2022 Yourney</span>
+                <span>© 2021-2022 Clottania</span>
             </div>
            
         </body>
