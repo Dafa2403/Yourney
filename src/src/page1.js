@@ -51,7 +51,7 @@ function One() {
       <div className='body' id='home'>
         
         <div className='conTitle'>
-          <span className='tag' >MAKE IT JOURNEY IS YOURS</span>
+          <span className='tag' >MAKE IT JOURNEY IS YOURS!</span>
           {/* <Button variant='success' size='lg' href='#produk'>GET STARTED</Button> */}
         </div>
         <a className='arw' href='#produk'>

@@ -49,11 +49,15 @@ ul{
   width: 100%;
     /* border: 1px solid white; */
 }
+@font-face {
+  font-family: "Rodondo";
+  src: url("../Font/Rodondo.otf");
+}
 .tag{
-  font-family: 'Rodondo';
-  font-style: normal;
+  font-family: Rodondo;
+  letter-spacing: 3px;
   color: white;
-  font-size: 80px;
+  
   text-align: center;
 }
 .arw{

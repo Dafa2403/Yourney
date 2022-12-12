@@ -171,15 +171,16 @@
     }
     .vector-top{
         position: absolute;
-        transform: rotate(-2deg) scale(1.1);
+        transform: rotate(-1deg) scale(1.07);
         width: 800px;
         z-index: 1;
+        padding-top: -calc();
     }
     .vector-bottom{
         position: absolute;
         /* bottom: 0; */
         right: 0;
-        padding-top: 410px;
+        padding-top: 353px;
     }
     .conDesk{
          
@@ -200,5 +201,9 @@
         justify-content: center;
         background:rgb(210, 210, 210);
         background:rgba(230, 230, 230, 0.3);
+    }
+    .header2{
+        font-weight: bold;
+        margin-bottom: 50px;
     }
   }
