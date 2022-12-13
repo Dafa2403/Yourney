@@ -174,13 +174,13 @@
         transform: rotate(-1deg) scale(1.07);
         width: 800px;
         z-index: 1;
-        padding-top: -calc();
+        /* padding-top: calc(); */
     }
     .vector-bottom{
         position: absolute;
         /* bottom: 0; */
         right: 0;
-        padding-top: 353px;
+        padding-top: 410px;
     }
     .conDesk{
          

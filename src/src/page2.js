@@ -3,7 +3,7 @@ import './styles/page2.css';
 
 function Two(){
     return(
-        <body className='body2'>
+        <body className='body2' id="portofolio">
             <div className='conContent'>
                 <div className='banner'>
                     <div className='obj'></div>

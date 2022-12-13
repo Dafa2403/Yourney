@@ -3,7 +3,7 @@ import './styles/page3.css';
 
 function Three(){
     return(
-        <div className="con" id="portofolio">
+        <div className="con" >
             <div className="porto">
                 <img className='vector-top' src={require('./img/Vector 3.png')}></img>
                 <div sm={4} className="Oapp">
