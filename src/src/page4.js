@@ -72,8 +72,8 @@ function Four(){
             </div>
         </Modal.Body>
         <Modal.Footer>
-            <a href={link}><IoLogoLinkedin size={50}/></a>
-            <a href={git}><IoLogoGithub size={50}/></a>
+            <a href={link} target="_blank"><IoLogoLinkedin size={50}/></a>
+            <a href={git} target="_blank"><IoLogoGithub size={50}/></a>
         </Modal.Footer>
       </Modal>
             <div className='conTeam'>

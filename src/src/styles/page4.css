@@ -92,7 +92,8 @@
     position: absolute;
     color: white;
     z-index: 1;
-    bottom: -1900px;
+    bottom: -1870px;
+    font-size: 20px;
     padding-left: 10px;
     text-shadow: 3px 3px #000;
 }
@@ -139,4 +140,12 @@
 .nModal{
     font-weight: bold;
     font-size: 30px;
+}
+@media screen and (min-width: 500px) {
+   
+}
+@media screen and (max-width: 1000px) {
+   .titleT{
+        font-size: 20px;
+   }
 }

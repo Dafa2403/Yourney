@@ -7,6 +7,7 @@ function Two(){
             <div className='conContent'>
                 <div className='banner'>
                     <div className='obj'></div>
+                    <div className='obj1'></div>
                     <div className='tBanner'>
                         <h1 className='hBanner'>TOP 15</h1>
                         <p className='dBanner'>PRODUCT CAPSTONE BANGKIT 2022</p>
