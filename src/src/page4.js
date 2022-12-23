@@ -81,13 +81,13 @@ function Four(){
                 <div className='conImg'>
                     <span className='titleT'>Machine Learning Team</span>
                     <div className='conImg1 ' >
-                        <img className='img1 ' src={require('./img/Personil/modal alif.jpeg')} onClick={handleShow} id='alif' ></img>
+                        <img className='img1 ' src={require('./img/Personil/BG White/alip.png')} onClick={handleShow} id='alif' ></img>
                     </div>
                     <div className='conImg1'>
-                        <img className='img2 ' src={require('./img/Personil/modal aul.jpg')} onClick={handleShow2} id='aulia' ></img>
+                        <img className='img2 ' src={require('./img/Personil/BG White/aul.png')} onClick={handleShow2} id='aulia' ></img>
                     </div>
                     <div className='conImg1'>
-                        <img className='img3 ' src={require('./img/Personil/modal roh.jpg')} onClick={handleShow3} id='rochman'></img>
+                        <img className='img3 ' src={require('./img/Personil/BG White/man.png')} onClick={handleShow3} id='rochman'></img>
                     </div>
                 </div>
                 {/* MD */}
@@ -100,16 +100,16 @@ function Four(){
                 {/* WD */}
                 <div className='conImg'>
                     <span className='titleT'>Web Developer Team</span>
-                    <img className='img5' src={require('./img/Personil/modal daf.jpg')} onClick={handleShow4}></img>
+                    <img className='img5' src={require('./img/Personil/BG White/Dafa.png')} onClick={handleShow4}></img>
                 </div>
                 {/* CC */}
                 <div className='conImg'>
                     <span className='titleT'>Cloud Computing Team</span>
                     <div className='conImg2'>
-                        <img className='img6' src={require('./img/Personil/modal ren.jpg')} onClick={handleShow5}></img>
+                        <img className='img6' src={require('./img/Personil/BG White/ginjal.png')} onClick={handleShow5}></img>
                     </div>
                     <div className='conImg2'>
-                        <img className='img7' src={require('./img/Personil/modals co.jpg')} onClick={handleShow6}></img>
+                        <img className='img7' src={require('./img/Personil/BG White/coco.png')} onClick={handleShow6}></img>
                     </div>
                 </div>
             </div>
