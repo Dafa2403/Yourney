@@ -15,9 +15,9 @@ function Three(){
                         <div className="conDesk">
                             <p style={{textAlign:'justify', color:"#ffff"}}>Aplikasi Yourney adalah aplikasi yang dapat memberikan minat pengguna aplikasi dengan memprediksikan minat mereka dengan menggunakan teknologi Artificial Intelligence, sesuai dengan tagline kami yaitu “Make Your Journey Yours” kami berusaha memberikan rekomendasi destinasi wisata yang sesuai dengan minat pengguna dengan adanya unsur fleksibilitas pengguna dalam menentukan dan menyesuaikan rekomendasi wisata yang telah diberikan. </p>
                         </div >
-                        <div className="conPs">
-                            <img className='ps' src={require('./img/foot.png')}></img>
-                            </div>
+                        <a className="conPs" href="https://play.google.com/store/apps/details?id=com.bangkit.yourney" target="_blank">
+                            <img className='ps' src={require('./img/getOn.png')}></img>
+                            </a>
                     </div>
                     </div>
                 </div>
