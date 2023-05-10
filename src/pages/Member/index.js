@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./styles.css";
 import { Alif, Aul, Roh, Daf, Ren, Coo } from "../../assets/Personil";
 import { Modal, Button } from "react-bootstrap";
-// import { Button } from "bootstrap";
 import Jpersonil from "./member.json";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 
@@ -20,64 +19,97 @@ function Member() {
   const arr1 = [];
   const arr2 = [];
   const arr3 = [];
-  const arr4 = [];
-  const arr5 = [];
 
-  const handleShow = (event) => {
-    setShow(true);
-
-    setId(event.currentTarget.id);
+  const handleShow = () => {
     for (let i = 0; i < Jpersonil.length; i++) {
       const element = Jpersonil[i];
       arr.push(element.Name);
       arr1.push(element.Job);
       arr2.push(element.linkedin);
       arr3.push(element.github);
-
-      // console.log("1", arr[1]);
-      if (id === "alif") {
-        setName(arr[0]);
-        setJob(arr1[0]);
-        setLinkedin(arr2[0]);
-        setGit(arr3[0]);
-        setImg(Alif);
-      } else if (id === "aul") {
-        setName(arr[1]);
-        setJob(arr1[1]);
-        setLinkedin(arr2[1]);
-        setGit(arr3[1]);
-        setImg(Aul);
-      } else if (id === "roh") {
-        setName(arr[2]);
-        setJob(arr1[2]);
-        setLinkedin(arr2[2]);
-        setGit(arr3[2]);
-        setImg(Roh);
-      } else if (id === "daf") {
-        setName(arr[3]);
-        setJob(arr1[3]);
-        setLinkedin(arr2[3]);
-        setGit(arr3[3]);
-        setImg(Daf);
-      } else if (id === "ren") {
-        setName(arr[4]);
-        setJob(arr1[4]);
-        setLinkedin(arr2[4]);
-        setGit(arr3[4]);
-        setImg(Ren);
-      } else if (id === "coo") {
-        setName(arr[5]);
-        setJob(arr1[5]);
-        setLinkedin(arr2[5]);
-        setGit(arr3[5]);
-        setImg(Coo);
-      } else {
-        console.log("error");
-      }
     }
-    return;
+    setShow(true);
+    setName(arr[0]);
+    setImg(Alif);
+    setJob(arr1[0]);
+    setLinkedin(arr2[0]);
+    setGit(arr3[0]);
   };
-  console.log("sukses", id, Name, job, linkedin, git);
+  const handleShow2 = () => {
+    for (let i = 0; i < Jpersonil.length; i++) {
+      const element = Jpersonil[i];
+      arr.push(element.Name);
+      arr1.push(element.Job);
+      arr2.push(element.linkedin);
+      arr3.push(element.github);
+    }
+    setShow(true);
+    setName(arr[1]);
+    setImg(Aul);
+    setJob(arr1[1]);
+    setLinkedin(arr2[1]);
+    setGit(arr3[1]);
+  };
+  const handleShow3 = () => {
+    for (let i = 0; i < Jpersonil.length; i++) {
+      const element = Jpersonil[i];
+      arr.push(element.Name);
+      arr1.push(element.Job);
+      arr2.push(element.linkedin);
+      arr3.push(element.github);
+    }
+    setShow(true);
+    setName(arr[2]);
+    setImg(Roh);
+    setJob(arr1[2]);
+    setLinkedin(arr2[2]);
+    setGit(arr3[2]);
+  };
+  const handleShow4 = () => {
+    for (let i = 0; i < Jpersonil.length; i++) {
+      const element = Jpersonil[i];
+      arr.push(element.Name);
+      arr1.push(element.Job);
+      arr2.push(element.linkedin);
+      arr3.push(element.github);
+    }
+    setShow(true);
+    setName(arr[3]);
+    setImg(Daf);
+    setJob(arr1[3]);
+    setLinkedin(arr2[3]);
+    setGit(arr3[3]);
+  };
+  const handleShow5 = () => {
+    for (let i = 0; i < Jpersonil.length; i++) {
+      const element = Jpersonil[i];
+      arr.push(element.Name);
+      arr1.push(element.Job);
+      arr2.push(element.linkedin);
+      arr3.push(element.github);
+    }
+    setShow(true);
+    setName(arr[4]);
+    setImg(Ren);
+    setJob(arr1[4]);
+    setLinkedin(arr2[4]);
+    setGit(arr3[4]);
+  };
+  const handleShow6 = () => {
+    for (let i = 0; i < Jpersonil.length; i++) {
+      const element = Jpersonil[i];
+      arr.push(element.Name);
+      arr1.push(element.Job);
+      arr2.push(element.linkedin);
+      arr3.push(element.github);
+    }
+    setShow(true);
+    setName(arr[5]);
+    setImg(Coo);
+    setJob(arr1[5]);
+    setLinkedin(arr2[5]);
+    setGit(arr3[5]);
+  };
 
   return (
     <div className="Pgallery">
@@ -123,27 +155,27 @@ function Member() {
         <div
           style={{ backgroundImage: `url(${Aul})` }}
           id="aul"
-          onClick={handleShow}
+          onClick={handleShow2}
         ></div>
         <div
           style={{ backgroundImage: `url(${Roh})` }}
           id="roh"
-          onClick={handleShow}
+          onClick={handleShow3}
         ></div>
         <div
           style={{ backgroundImage: `url(${Daf})` }}
           id="daf"
-          onClick={handleShow}
+          onClick={handleShow4}
         ></div>
         <div
           style={{ backgroundImage: `url(${Ren})` }}
           id="ren"
-          onClick={handleShow}
+          onClick={handleShow5}
         ></div>
         <div
           style={{ backgroundImage: `url(${Coo})` }}
           id="coo"
-          onClick={handleShow}
+          onClick={handleShow6}
         ></div>
       </div>
     </div>
