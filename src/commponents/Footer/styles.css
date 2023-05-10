@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "Montserrat-Light";
+  src: url("../../pages/Font/Montserrat/static/Montserrat-Light.ttf");
+}
+.Footer {
+  height: 30vh;
+  background-color: #062e28;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  font-size: 20px;
+  font-family: Montserrat-Light;
+}
+.Ficons {
+  display: flex;
+  gap: 50px;
+}
+.Ficons > a {
+  color: #fff;
+}
+.Ficons > a:hover {
+  color: #e08839;
+}
