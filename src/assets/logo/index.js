@@ -8,6 +8,7 @@ import Ibtp1 from "./img/trans 1.png";
 import Ibtp2 from "./img/logo_trans.png";
 import Iyourney from "./img/Yourney.jpg";
 import Iyourney2 from "./img/logo.png";
+import Iuser from "./img/user.png";
 
 export {
   Ibangkit,
@@ -20,4 +21,5 @@ export {
   Iplaystore,
   Iyourney,
   Iyourney2,
+  Iuser,
 };

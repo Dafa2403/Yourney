@@ -1,9 +1,24 @@
-import Navigation from "./commponents/Navbar";
-import Home from "./pages/Home";
-import Brand from "./pages/brand";
-import Portofolio from "./pages/Portofolio";
-import Member from "./pages/Member";
-import Footer from "./commponents/Footer";
-import Highlight from "./commponents/Middle";
+import React from "react";
 
-export { Navigation, Home, Brand, Portofolio, Member, Footer, Highlight };
+const Dashboard = React.lazy(() =>
+  import("./commponents/Admin/Dashboard/index")
+);
+const Data = React.lazy(() => import("./commponents/Admin/Data/data"));
+
+//Forms
+const FormControl = React.lazy(() => import("./commponents/Admin/FormInput"));
+
+// const Widgets = React.lazy(() => import("./commponents/Admin/widgets/Widgets"));
+
+const routes = [
+  { path: "/adminYourney", exact: true, name: "Admin" },
+  { path: "/adminYourney/dashboard", name: "Dashboard", element: Dashboard },
+  {
+    path: "/adminYourney/forms",
+    name: "Forms",
+    element: FormControl,
+  },
+  { path: "/adminYourney/data", name: "Data", element: Data },
+];
+
+export default routes;
