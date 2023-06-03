@@ -21,9 +21,20 @@ const FormControl = () => {
             <strong>Input Data Destinasi</strong>
           </CCardHeader>
           <CCardBody>
-            <p className="text-medium-emphasis small">
-              Input data destinasi wisata
-            </p>
+            <CFormInput
+              type="number"
+              placeholder="ID Destinasi"
+              aria-label="default input example"
+              label="ID Destinasi"
+            />
+            <br />
+            <CFormInput
+              type="number"
+              placeholder="ID Kategori Destinasi"
+              aria-label="default input example"
+              label="ID Kategori Destinasi"
+            />
+            <br />
             <CFormInput
               type="text"
               placeholder="Nama Destinasi"
@@ -37,15 +48,12 @@ const FormControl = () => {
               <CFormTextarea aria-label="With textarea"></CFormTextarea>
             </CInputGroup>
             <br />
-
-            <div className="mb-3">
-              <CFormInput
-                type="file"
-                id="formFileMultiple"
-                label="Multiple files input example"
-                multiple
-              />
-            </div>
+            <CFormInput
+              type="text"
+              placeholder="Link Gambar Destinasi"
+              aria-label="default input example"
+              label="Link Gambar Destinasi"
+            />
             <br />
             <CButton type="submit" className="mb-3">
               Submit
