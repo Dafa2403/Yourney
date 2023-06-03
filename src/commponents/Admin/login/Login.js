@@ -19,10 +19,10 @@ import { Ibackground1 } from "../../../assets/bg/index";
 // import axios from "../../../API/axios";
 import axios from "axios";
 import { FaRegUser, FaLock } from "react-icons/fa";
-// import AuthContext from "../../../context/authProvider";
+import AuthContext from "../../../context/authProvider";
 
 const Login = () => {
-  // const { setAuth } = useContext(AuthContext);
+  const { setAuth } = useContext(AuthContext);
   const [username, setUsername] = useState("");
   const [password, setPass] = useState("");
   const [visible, setVisible] = useState(false);
@@ -57,7 +57,7 @@ const Login = () => {
       );
       const accessToken = res?.data?.access;
       // const role = res?.data?.role;
-      // setAuth({ username, password, accessToken });
+      setAuth({ username, password, accessToken });
       setUsername("");
       setPass("");
       setSuccess(true);
