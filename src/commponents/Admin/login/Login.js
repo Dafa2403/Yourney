@@ -19,12 +19,10 @@ import { Ibackground1 } from "../../../assets/bg/index";
 import axios from "axios";
 import { FaRegUser, FaLock } from "react-icons/fa";
 import AuthContext from "../../../context/authProvider";
-import AuthUser from "../context/authUser";
-import { UserProvider } from "../context/user";
 
 axios.defaults.baseURL = "https://dummyjson.com";
 
-const Login = () => {
+const Login = (props) => {
   const { setAuth } = useContext(AuthContext);
   const [username, setUsername] = useState("");
   const [password, setPass] = useState("");
@@ -78,6 +76,7 @@ const Login = () => {
         setVisible(true);
       }
     }
+    setVisible(true);
   };
 
   return (
