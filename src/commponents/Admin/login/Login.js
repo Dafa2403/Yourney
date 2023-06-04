@@ -16,10 +16,13 @@ import {
 } from "@coreui/react";
 
 import { Ibackground1 } from "../../../assets/bg/index";
-// import axios from "../../../API/axios";
 import axios from "axios";
 import { FaRegUser, FaLock } from "react-icons/fa";
 import AuthContext from "../../../context/authProvider";
+import AuthUser from "../context/authUser";
+import { UserProvider } from "../context/user";
+
+axios.defaults.baseURL = "https://dummyjson.com";
 
 const Login = () => {
   const { setAuth } = useContext(AuthContext);
@@ -43,20 +46,18 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        "/login/",
-        JSON.stringify({ username, password }),
-        {
-          headers: {
-            "Content-Type": "application/json",
-            withCredentials: true,
-            "Access-Control-Allow-Origin": "*", // Required for CORS support to work
-            "Access-Control-Allow-Credentials": true, // Required for cookies, authorization headers with HTTPS
-          },
-        }
-      );
-      const accessToken = res?.data?.access;
-      // const role = res?.data?.role;
+      const res = await axios({
+        method: "post",
+        url: "/auth/login",
+        data: {
+          username: username,
+          password: password,
+        },
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const accessToken = res?.data?.token;
       setAuth({ username, password, accessToken });
       setUsername("");
       setPass("");
