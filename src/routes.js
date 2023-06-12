@@ -11,7 +11,7 @@ const FormControl = React.lazy(() => import("./commponents/Admin/FormInput"));
 // const Widgets = React.lazy(() => import("./commponents/Admin/widgets/Widgets"));
 
 const routes = [
-  { path: "/adminYourney", exact: true, name: "Admin" },
+  { path: "/adminYourney/dasboard", exact: true, name: "admin" },
   { path: "/adminYourney/dashboard", name: "Dashboard", element: Dashboard },
   {
     path: "/adminYourney/forms",

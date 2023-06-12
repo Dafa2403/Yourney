@@ -1,5 +1,5 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import {
   CButton,
   CCard,
@@ -15,23 +15,31 @@ import {
   CTableRow,
 } from "@coreui/react";
 
-import CIcon from "@coreui/icons-react";
-import {
-  cibCcAmex,
-  cibCcApplePay,
-  cibCcMastercard,
-  cibCcPaypal,
-  cibCcStripe,
-  cibCcVisa,
-  cifBr,
-  cifEs,
-  cifFr,
-  cifIn,
-  cifPl,
-  cifUs,
-} from "@coreui/icons";
+const Destinasi = () => {
+  const [user, setUser] = useState();
 
-const Dashboard = () => {
+  useEffect(() => {
+    let isMounted = true;
+    const controller = new AbortController();
+
+    const getDestinasi = async () => {
+      try {
+        const res = await axios.get("http://127.0.0.1:8080/destinasi", {
+          signal: controller.signal,
+        });
+        console.log(res.data);
+        isMounted && setUser(res.data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    getDestinasi();
+    return () => {
+      isMounted = false;
+      controller.abort();
+    };
+  }, []);
+
   const tableExample = [
     {
       destinas: "Yiorgos Avraamu",
@@ -108,4 +116,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Destinasi;
