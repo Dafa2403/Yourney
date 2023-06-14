@@ -1,4 +1,6 @@
 import React from "react";
+import axios from "../../../api/axios";
+import useAuth from "../../../hooks/useAuth";
 import {
   CRow,
   CCol,
@@ -12,8 +14,37 @@ import { getStyle } from "@coreui/utils";
 import { CChartLine } from "@coreui/react-chartjs";
 import CIcon from "@coreui/icons-react";
 import { cilOptions } from "@coreui/icons";
+import { useState } from "react";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const WidgetsDropdown = () => {
+  const { auth } = useAuth();
+  const [des, setDes] = useState({});
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/data");
+  };
+
+  const arr = [];
+  useEffect(() => {
+    const res = axios
+      .get("/destinasi", {
+        headers: {
+          Authorization: `Bearer ${auth.accessToken}`,
+        },
+      })
+      .then((res) => {
+        arr.push(res.data);
+        for (let i = 0; i < arr.length; i++) {
+          const element = arr[i];
+          setDes(element);
+        }
+      });
+  }, []);
+
+  console.log(des.length);
   return (
     <CRow>
       <CCol sm={6} lg={6}>
@@ -22,23 +53,6 @@ const WidgetsDropdown = () => {
           color="primary"
           value={<h2>26K </h2>}
           title="Users"
-          action={
-            <CDropdown alignment="end">
-              <CDropdownToggle
-                color="transparent"
-                caret={false}
-                className="p-0"
-              >
-                <CIcon
-                  icon={cilOptions}
-                  className="text-high-emphasis-inverse"
-                />
-              </CDropdownToggle>
-              <CDropdownMenu>
-                <CDropdownItem>View</CDropdownItem>
-              </CDropdownMenu>
-            </CDropdown>
-          }
           chart={
             <CChartLine
               className="mt-3 mx-3"
@@ -60,7 +74,7 @@ const WidgetsDropdown = () => {
                 ],
                 datasets: [
                   {
-                    label: "My First dataset",
+                    // label: "My First dataset",
                     backgroundColor: "transparent",
                     borderColor: "rgba(255,255,255,.55)",
                     pointBackgroundColor: getStyle("--cui-primary"),
@@ -105,7 +119,7 @@ const WidgetsDropdown = () => {
                   point: {
                     radius: 4,
                     hitRadius: 10,
-                    hoverRadius: 4,
+                    // hoverRadius: 4,
                   },
                 },
               }}
@@ -117,25 +131,8 @@ const WidgetsDropdown = () => {
         <CWidgetStatsA
           className="mb-4"
           color="info"
-          value={<h2>6.200 </h2>}
+          value={<h2>{des.length} </h2>}
           title="Destinations"
-          action={
-            <CDropdown alignment="end">
-              <CDropdownToggle
-                color="transparent"
-                caret={false}
-                className="p-0"
-              >
-                <CIcon
-                  icon={cilOptions}
-                  className="text-high-emphasis-inverse"
-                />
-              </CDropdownToggle>
-              <CDropdownMenu>
-                <CDropdownItem>View</CDropdownItem>
-              </CDropdownMenu>
-            </CDropdown>
-          }
           chart={
             <CChartLine
               className="mt-3 mx-3"
@@ -157,7 +154,7 @@ const WidgetsDropdown = () => {
                 ],
                 datasets: [
                   {
-                    label: "My First dataset",
+                    // label: "My First dataset",
                     backgroundColor: "transparent",
                     borderColor: "rgba(255,255,255,.55)",
                     pointBackgroundColor: getStyle("--cui-info"),
@@ -201,7 +198,6 @@ const WidgetsDropdown = () => {
                   point: {
                     radius: 4,
                     hitRadius: 10,
-                    hoverRadius: 4,
                   },
                 },
               }}

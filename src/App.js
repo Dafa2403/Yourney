@@ -2,8 +2,6 @@ import React, { Component, Suspense } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./scss/style.scss";
 import "./Font/font.css";
-import { useRecoilValue } from "recoil";
-import { authenticated } from "./store";
 import RequireAuth from "./commponents/Admin/RequireAuth";
 
 const DefaultLayout = React.lazy(() => import("./layout/DefaultLayout"));

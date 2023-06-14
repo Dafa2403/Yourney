@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState, useContext } from "react";
-import { atom } from "recoil";
+
 import { Link, useNavigate, Navigate, useLocation } from "react-router-dom";
 import {
   CButton,
@@ -59,13 +59,11 @@ const Login = () => {
           },
         }
       );
-      console.log(res.data);
-      const accessToken = res?.data?.token;
+      const accessToken = res?.data?.access;
       setAuth({ username, password, accessToken });
       console.log("berhasil");
       setUsername("");
       setPass("");
-      console.log("test", location);
       navigate(from, { replace: true });
     } catch (err) {
       if (!err.response) {

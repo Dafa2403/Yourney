@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../../../api/axios";
 import {
   CButton,
   CCard,
@@ -14,58 +14,37 @@ import {
   CTableHeaderCell,
   CTableRow,
 } from "@coreui/react";
+import useRefreshToken from "../../../hooks/useRefreshToken";
+import useAuth from "../../../hooks/useAuth";
 
 const Destinasi = () => {
-  const [user, setUser] = useState();
-
+  const [Destinasi, setDestinasi] = useState({});
+  const refresh = useRefreshToken();
+  const { auth } = useAuth();
+  // console.log("des", auth.accessToken);
+  const arr = [];
   useEffect(() => {
-    let isMounted = true;
-    const controller = new AbortController();
-
-    const getDestinasi = async () => {
-      try {
-        const res = await axios.get("http://127.0.0.1:8080/destinasi", {
-          signal: controller.signal,
-        });
-        console.log(res.data);
-        isMounted && setUser(res.data);
-      } catch (err) {
-        console.error(err);
-      }
-    };
-    getDestinasi();
-    return () => {
-      isMounted = false;
-      controller.abort();
-    };
+    const res = axios
+      .get("/destinasi", {
+        headers: {
+          Authorization: `Bearer ${auth.accessToken}`,
+        },
+      })
+      .then((res) => {
+        arr.push(res.data);
+        for (let i = 0; i < arr.length; i++) {
+          const element = arr[i];
+          // console.log(element);
+          setDestinasi(element);
+        }
+      });
+    // console.log(arr);
   }, []);
-
-  const tableExample = [
-    {
-      destinas: "Yiorgos Avraamu",
-      deskripsi:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-      linkGambar: "https://picsum.photos/200/300",
-      activity: "10 sec ago",
-    },
-    {
-      destinas: "Yiorgos Avraamu",
-      deskripsi:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-      linkGambar: "https://picsum.photos/200/300",
-      activity: "10 sec ago",
-    },
-    {
-      destinas: "Yiorgos Avraamu",
-      deskripsi:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-      linkGambar: "https://picsum.photos/200/300",
-      activity: "10 sec ago",
-    },
-  ];
+  console.log(Destinasi);
 
   return (
     <>
+      <CButton onClick={() => refresh()}>test</CButton>
       <CRow>
         <CCol xs>
           <CCard className="mb-4">
@@ -82,10 +61,10 @@ const Destinasi = () => {
                   </CTableRow>
                 </CTableHead>
                 <CTableBody>
-                  {tableExample.map((item, index) => (
+                  {Destinasi.map((item, index) => (
                     <CTableRow v-for="item in tableItems" key={index}>
                       <CTableDataCell>
-                        <div>{item.destinas}</div>
+                        <div>{item.nama_desinasi}</div>
                       </CTableDataCell>
                       <CTableDataCell>
                         <div style={{ width: 300 }}>
