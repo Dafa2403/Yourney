@@ -8,7 +8,6 @@ import WidgetsDropdown from "./WidgetsDropdown";
 import { useEffect } from "react";
 import axios from "../../../api/axios";
 import useAuth from "../../../hooks/useAuth";
-import useData from "../../../hooks/useData";
 import { useState } from "react";
 
 const Dashboard = () => {

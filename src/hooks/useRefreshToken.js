@@ -6,8 +6,10 @@ const useRefreshToken = () => {
   const { setAuth } = useAuth();
 
   const refresh = async () => {
-    const res = await axios.post("/refresh", {
-      withCredentials: true,
+    const res = await axios.post("/refresh", JSON.stringify({}), {
+      headers: {
+        Authorization: `Bearer ${setAuth}`,
+      },
     });
     setAuth((prev) => {
       console.log(JSON.stringify(prev));

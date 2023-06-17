@@ -21,15 +21,12 @@ import { useNavigate } from "react-router-dom";
 const WidgetsDropdown = () => {
   const { auth } = useAuth();
   const [des, setDes] = useState({});
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate("/data");
-  };
+  const [User, setUser] = useState({});
 
   const arr = [];
+  const arrUser = [];
   useEffect(() => {
-    const res = axios
+    axios
       .get("/destinasi", {
         headers: {
           Authorization: `Bearer ${auth.accessToken}`,
@@ -42,16 +39,29 @@ const WidgetsDropdown = () => {
           setDes(element);
         }
       });
+
+    axios
+      .get("/db", {
+        headers: {
+          Authorization: `Bearer ${auth.accessToken}`,
+        },
+      })
+      .then((res) => {
+        arrUser.push(res.data);
+        for (let i = 0; i < arrUser.length; i++) {
+          const element = arrUser[i];
+          setUser(element);
+        }
+      });
   }, []);
 
-  console.log(des.length);
   return (
     <CRow>
       <CCol sm={6} lg={6}>
         <CWidgetStatsA
           className="mb-4"
           color="primary"
-          value={<h2>26K </h2>}
+          value={<h2>{User.length} </h2>}
           title="Users"
           chart={
             <CChartLine

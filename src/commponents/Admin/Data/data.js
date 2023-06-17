@@ -14,17 +14,14 @@ import {
   CTableHeaderCell,
   CTableRow,
 } from "@coreui/react";
-import useRefreshToken from "../../../hooks/useRefreshToken";
 import useAuth from "../../../hooks/useAuth";
 
 const Destinasi = () => {
-  const [Destinasi, setDestinasi] = useState({});
-  const refresh = useRefreshToken();
+  const [Destinasi, setDestinasi] = useState([]);
   const { auth } = useAuth();
-  // console.log("des", auth.accessToken);
   const arr = [];
   useEffect(() => {
-    const res = axios
+    axios
       .get("/destinasi", {
         headers: {
           Authorization: `Bearer ${auth.accessToken}`,
@@ -34,7 +31,6 @@ const Destinasi = () => {
         arr.push(res.data);
         for (let i = 0; i < arr.length; i++) {
           const element = arr[i];
-          // console.log(element);
           setDestinasi(element);
         }
       });
@@ -44,7 +40,6 @@ const Destinasi = () => {
 
   return (
     <>
-      <CButton onClick={() => refresh()}>test</CButton>
       <CRow>
         <CCol xs>
           <CCard className="mb-4">
@@ -56,7 +51,6 @@ const Destinasi = () => {
                     <CTableHeaderCell>Nama Destinasi</CTableHeaderCell>
                     <CTableHeaderCell>Deskripsi</CTableHeaderCell>
                     <CTableHeaderCell>Image</CTableHeaderCell>
-                    <CTableHeaderCell>Activity</CTableHeaderCell>
                     <CTableHeaderCell>Action</CTableHeaderCell>
                   </CTableRow>
                 </CTableHead>
@@ -73,12 +67,8 @@ const Destinasi = () => {
                       </CTableDataCell>
                       <CTableDataCell>
                         <div size="xl">
-                          <p>{item.linkGambar}</p>
+                          <p>{item.pic_destinasi}</p>
                         </div>
-                      </CTableDataCell>
-                      <CTableDataCell>
-                        <div className="small text-medium-emphasis">Update</div>
-                        <strong>{item.activity}</strong>
                       </CTableDataCell>
                       <CTableDataCell>
                         <CButton color="warning">Edit</CButton>
