@@ -27,9 +27,9 @@ function App() {
             element={<DefaultLayoutPortal />}
           />
           <Route path="/adminYourney" name="login" element={<Login />} />
-          <Route path="*" name="admin" element={<DefaultLayout />} />
-
-          <Route element={<RequireAuth />}></Route>
+          <Route element={<RequireAuth />}>
+            <Route path="*" name="admin" element={<DefaultLayout />} />
+          </Route>
         </Routes>
       </Suspense>
     </BrowserRouter>

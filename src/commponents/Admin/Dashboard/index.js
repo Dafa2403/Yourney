@@ -1,17 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import { CCard, CCardBody, CCol, CRow } from "@coreui/react";
 import { CChartLine } from "@coreui/react-chartjs";
 import { getStyle, hexToRgba } from "@coreui/utils";
 
 import WidgetsDropdown from "./WidgetsDropdown";
-import { useEffect } from "react";
 import axios from "../../../api/axios";
 import useAuth from "../../../hooks/useAuth";
-import { useState } from "react";
 
 const Dashboard = () => {
   const { auth } = useAuth();
+  const [date, setDate] = useState([]);
+  const arr = [];
+
+  useEffect(() => {
+    axios
+      .get("/db", {
+        headers: {
+          Authorization: `Bearer ${auth.accessToken}`,
+        },
+      })
+      .then((respone) => {
+        // console.log(respone.data[1].created_time);
+        arr.push(respone.data);
+        for (let i = 0; i < arr.length; i++) {
+          const element = arr[i];
+          console.log("tes", element.created_time);
+          setDate(element);
+        }
+      });
+  }, []);
+
+  console.log(date.created_time);
+
   const random = (min, max) =>
     Math.floor(Math.random() * (max - min + 1) + min);
 
@@ -23,7 +44,7 @@ const Dashboard = () => {
           <CRow>
             <CCol sm={5}>
               <h4 id="traffic" className="card-title mb-0">
-                Traffic
+                User
               </h4>
               <div className="small text-medium-emphasis">
                 January - December 2023
