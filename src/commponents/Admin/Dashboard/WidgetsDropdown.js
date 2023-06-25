@@ -17,19 +17,20 @@ import { cilOptions } from "@coreui/icons";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import getCookie from "../../../hooks/getCookie";
 
 const WidgetsDropdown = () => {
   const { auth } = useAuth();
   const [des, setDes] = useState({});
   const [User, setUser] = useState({});
-
+  console.log("auth", getCookie("usrin"));
   const arr = [];
   const arrUser = [];
   useEffect(() => {
     axios
       .get("/destinasi", {
         headers: {
-          Authorization: `Bearer ${auth.accessToken}`,
+          Authorization: `Bearer ${getCookie("usrin").slice(1, -1)}`,
         },
       })
       .then((res) => {
@@ -43,7 +44,7 @@ const WidgetsDropdown = () => {
     axios
       .get("/db", {
         headers: {
-          Authorization: `Bearer ${auth.accessToken}`,
+          Authorization: `Bearer ${getCookie("usrin").slice(1, -1)}`,
         },
       })
       .then((res) => {

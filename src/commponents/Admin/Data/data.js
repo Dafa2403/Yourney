@@ -15,6 +15,7 @@ import {
   CTableRow,
 } from "@coreui/react";
 import useAuth from "../../../hooks/useAuth";
+import getCookie from "../../../hooks/getCookie";
 
 const Destinasi = () => {
   const [Destinasi, setDestinasi] = useState([]);
@@ -24,7 +25,7 @@ const Destinasi = () => {
     axios
       .get("/destinasi", {
         headers: {
-          Authorization: `Bearer ${auth.accessToken}`,
+          Authorization: `Bearer ${getCookie("usrin").slice(1, -1)}`,
         },
       })
       .then((res) => {

@@ -13,6 +13,7 @@ import {
 } from "@coreui/react";
 import axios from "../../../api/axios";
 import useAuth from "../../../hooks/useAuth";
+import getCookie from "../../../hooks/getCookie";
 
 const FormControl = () => {
   const { auth } = useAuth();
@@ -32,7 +33,7 @@ const FormControl = () => {
         {
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${auth.accessToken}`,
+            Authorization: `Bearer ${getCookie("usrin").slice(1, -1)}`,
           },
         }
       );

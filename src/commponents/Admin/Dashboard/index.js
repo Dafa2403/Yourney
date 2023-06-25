@@ -7,6 +7,7 @@ import { getStyle, hexToRgba } from "@coreui/utils";
 import WidgetsDropdown from "./WidgetsDropdown";
 import axios from "../../../api/axios";
 import useAuth from "../../../hooks/useAuth";
+import getCookie from "../../../hooks/getCookie";
 
 const Dashboard = () => {
   const { auth } = useAuth();
@@ -17,7 +18,7 @@ const Dashboard = () => {
     axios
       .get("/db", {
         headers: {
-          Authorization: `Bearer ${auth.accessToken}`,
+          Authorization: `Bearer ${getCookie("usrin").slice(1, -1)}`,
         },
       })
       .then((respone) => {

@@ -3,6 +3,9 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./scss/style.scss";
 import "./Font/font.css";
 import RequireAuth from "./commponents/Admin/RequireAuth";
+import getCookie from "./hooks/getCookie";
+
+const cookie = getCookie("usrin");
 
 const DefaultLayout = React.lazy(() => import("./layout/DefaultLayout"));
 const loading = (

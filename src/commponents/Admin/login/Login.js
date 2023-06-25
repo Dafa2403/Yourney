@@ -20,6 +20,8 @@ import { Ibackground1 } from "../../../assets/bg/index";
 import axios from "axios";
 import { FaRegUser, FaLock } from "react-icons/fa";
 import useAuth from "../../../hooks/useAuth";
+import setCookie from "../../../hooks/setCookie";
+import removeCookie from "../../../hooks/removeCookie";
 
 const Login = () => {
   const { setAuth } = useAuth();
@@ -43,6 +45,7 @@ const Login = () => {
   useEffect(() => {
     setErrmsg("");
   }, [username, password]);
+  removeCookie("usrin");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -59,6 +62,7 @@ const Login = () => {
           },
         }
       );
+      setCookie("usrin", JSON.stringify(res.data.access));
       const accessToken = res?.data?.access;
       setAuth({ username, password, accessToken });
       console.log("berhasil");

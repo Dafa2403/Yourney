@@ -13,16 +13,19 @@ import avatar8 from "../../../../assets/logo/img/user.png";
 import axios from "../../../../api/axios";
 import useAuth from "../../../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
+import removeCookie from "../../../../hooks/removeCookie";
+import getCookie from "../../../../hooks/getCookie";
 
 const AppHeaderDropdown = () => {
   const { auth } = useAuth();
   const navigate = useNavigate();
-  const handleOut = async () => {
-    const res = await axios.delete("/logout", {
+  const handleOut = () => {
+    axios.delete("/logout", {
       headers: {
-        Authorization: `Bearer ${auth.accessToken}`,
+        Authorization: `Bearer ${getCookie("usrin").slice(1, -1)}`,
       },
     });
+    removeCookie("usrin");
     navigate("/adminYourney");
   };
 
