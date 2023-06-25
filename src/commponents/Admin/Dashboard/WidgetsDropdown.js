@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "../../../api/axios";
 import useAuth from "../../../hooks/useAuth";
+import "./styles.css";
 import {
   CRow,
   CCol,
@@ -66,7 +67,7 @@ const WidgetsDropdown = () => {
           title="Users"
           chart={
             <CChartLine
-              className="mt-3 mx-3"
+              className="mt-3 mx-3 disableChart"
               style={{ height: "70px" }}
               data={{
                 labels: [
@@ -140,7 +141,7 @@ const WidgetsDropdown = () => {
       </CCol>
       <CCol sm={6} lg={6}>
         <CWidgetStatsA
-          className="mb-4"
+          className="mb-4 disableChart"
           color="info"
           value={<h2>{des.length} </h2>}
           title="Destinations"
